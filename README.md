@@ -4,15 +4,19 @@
 ## Overall Instructions
 The overall assignment has two parts. In the first part you will create a vocabulary and in the second part you will develop a tokenizer class. 
 
-Overall, all large language models or LLM (at least the textual ones) are trained with text. How can you input text into a computer for training LLMs? I will give a brief introduction of LLMs and training but this is by no means comprehensive. 
+Overall, all large language models or LLM (at least the textual ones) are trained with textual data. How can you input text into a computer for and train LLMs? I will give a brief introduction about LLMs. 
 
-There are multiple steps in training a large language models from scratch. The image below shows the required steps for training a LLM. The input in this image is `"So long and thanks for"` and the first step is called **Input Embeddings** which refers to transforming the string, text or input into high-dimensional vectors (or in simple terms into complex numbers)
-![Alt text](jurafsky_LLM_overall.png)
+There are multiple steps in training a large language models from scratch. The image below shows the required steps for training a LLM. The input in this image is `"So long and thanks for"` and the first step is called **Input Embeddings** which refers to transforming the string, text or input into high-dimensional vectors (or in simple terms, transforming the input text into complex numbers)
+![Alt text](images/jurafsky_LLM_overall.png)
 
-In this assignment, we will concentrate on a task that happens before obtaining the **Input Embeddings**.
+In this assignment, we will work on a task that happens before generating the **Input Embeddings**.
 
-The image below shows that before obtaining the **Input Embeddings** or **Token Embeddings** we need to do two things 1) tokenize our text and 2) create token IDs. Your assignment is to create python scripts that can automate this process.
-![Alt text](4.webp)
+The image below shows that before obtaining the **Input Embeddings** or **Token Embeddings** we need to do two things:
+1) tokenize our text
+2) create token IDs.
+
+Your assignment is to create python scripts that can automate this process.
+![Alt text](images/4.webp)
 
 
 Tokenization can be defined as the process of breaking text into smaller units, such as individual words and punctuation characters. For our assignment, we will break the text into whole words and punctuations. For instance, let's tokenize a question a doctor made to a patient:
@@ -23,37 +27,38 @@ Doctor's turn:
 Tokenized:
 `['OK', ',', 'and', 'then', 'any', 'cancers', 'in', 'the', 'family', '?']`
 
-As you can see everything inside a text was tokenized. From a linguistics perspective, you tokenized everything that adds value to the meaning of a sentence. This is why we tokenized the question mark `'?'`. The sentences would carry another meaning if ignore this token.
+As you can see everything inside the doctor's turn was tokenized. From a linguistics perspective, you tokenized everything that adds value to the meaning of a sentence. 
 
 Another example:
-![Alt text](tokenization_example.png)
+![Alt text](images/tokenization_example.png)
 
-*Random quesrtion for you, What is the meaning of the token `'--'` in the previous example? If you are curious and have time, you can google the impact this token has on the syntax of a sentence. Would it be okay to ignore this token?*
+*Random question for you, What is the value of tokenizing `'--'` in the previous example? If you are curious and have time, you can google the impact this token has on the syntax of a sentence. Would it be okay to ignore this token?*
 
 After tokenization, you need to convert the tokenized text into token IDs. For this, you will create a **Token ID generator class**. This class needs to have two parts: 
 - The `encode` function that turns text into token IDs
 - The `decode` function that turns token IDs back into text.
 
-![Alt text](tokenizer_class.png)
+![Alt text](images/tokenizer_class.png)
 
-Let's focus on the encoding section `tokenizer.encode(text)`. In this step, the sample text is tokenized into tokens (tokenization) and then transfromed into token IDs. But if you see carefully you need a vocabulary to make this last step happen. 
+Let's focus on the encoding section `tokenizer.encode(text)`. In this step, the sample text is tokenized into tokens (tokenization) and then transfromed into token IDs. If you carefully see at the image, you will find you need a "vocabulary" to make this last step happen. 
 
-How do you create a vocabulary? It depends on the training dataset you are using to create a LLM. For instance, imagine your training data is every wikipedia site available in the internet. Then, you will create a python script that takes everything from wikipedia, tokenize it, and saves each token in a dictionary with their corresponding number. (See image below)
-![Alt text](vocabulary.png)
+How do you create a vocabulary? It depends on the training dataset you are using to train your LLM. For instance, imagine your training data all the information available from wikipedia. Then, you will create a python script that does 3 things:
+1) reads everything from wikipedia
+2) tokenize the input text
+3) saves each token and its corresponding number into a dictionary. (See image below)
+![Alt text](images/vocabulary.png)
 
-Once you have created a dictionary like the one above, you can start training your LLM. Let's look at the image below and imagine that the first sentence in your training dataset is `This is an example` your **Token ID generator class** will transform this into Token IDs or, in simple terms, into numbers. 
-![Alt text](4.webp)
+Once you have created a dictionary like the one above, you can start training your LLM. Let's look at the following image and imagine that the first sentence in your training dataset is `This is an example`. Your **Token ID generator class** by using your dictionary will transform the input text into Token IDs. 
+![Alt text](images/4.webp)
 
-
-This is a brief description of **Tokenization** and **Token ID generator class**. 
 
 
 ## First part
-Your job is to create a vocabulary from 270 patient-doctor mock conversations. The dataset was obtained from this [article]((https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/resources/lecture-6-recursion-and-dictionaries/)). (You do not need to read the article)
+Your job is to create a vocabulary from 270 patient-doctor mock conversations. The dataset was obtained from this [article](https://www.nature.com/articles/s41597-022-01423-1). (You do not need to read the article)
 
 The conversations were already transcribed and saved into the "transcriptions" folder in this github repository. 
 
-I will give you some guidenace that will help you create your dictionary. 
+I will give you some guidance on how to clean your data. 
 
 **REMINDER!**
 You are not allowed to use the following packages:
@@ -61,7 +66,7 @@ You are not allowed to use the following packages:
 - [NLTK](https://www.nltk.org/)
 
 ### Cleaning data
-I would recommend to work with only one file first. And after you succesfully create a dictionary for one file, adapt your coding for multiple files. 
+I would recommend to work with only one file first. And after creating a dictionary for one file, adapt your coding for multiple files. 
 
 
 #### Deleting `D:` and `P:`
