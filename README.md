@@ -4,7 +4,7 @@
 ## Overall Instructions
 The overall assignment has two parts. In the first part you will create a vocabulary and in the second part you will develop a tokenizer class. 
 
-Overall, all large language models or LLM (at least the textual ones) are trained with textual data. How can you input text into a computer for and train LLMs? I will give a brief introduction about LLMs. 
+Overall, all large language models or LLM (at least the textual ones) are trained with textual data. How can you input text into a computer and train LLMs?
 
 There are multiple steps in training a large language models from scratch. The image below shows the required steps for training a LLM. The input in this image is `"So long and thanks for"` and the first step is called **Input Embeddings** which refers to transforming the string, text or input into high-dimensional vectors (or in simple terms, transforming the input text into complex numbers)
 ![Alt text](images/jurafsky_LLM_overall.png)
