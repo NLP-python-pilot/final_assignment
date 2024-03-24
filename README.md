@@ -115,9 +115,9 @@ OK, and then any cancers in the family?
 No.
 ```
 
-We need to split each line into tokens but we also need to consider each punctuation mark a token (comma, question, and period).
+We need to split each line into tokens. For our assignment, every word and punctuation mark (i.e., comma, question, and period) is a token.
 
-To do this, we will use a `re.split()` that splits a sentence based on prespecified values. Use the code below in your first part of your assignment:
+To do this, we will use a `re.split()` that splits a sentence based on prespecified values. Use the code below wherever is needed:
 
 ```python
 # Imagine your input is just one turn. 
