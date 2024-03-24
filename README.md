@@ -71,7 +71,7 @@ I would recommend to work with only one file first. And after creating a diction
 
 #### Deleting `D:` and `P:`
 
-Imagine we choose the file named `CAR0001.txt`. The first four turns are: 
+Imagine we choose two turns from the file named `CAR0001.txt`.
 
 ```
 D: OK, and then any cancers in the family?
@@ -79,7 +79,7 @@ D: OK, and then any cancers in the family?
 P: No.
 ```
 
-Because `D: ` and `P: ` mean that each turn belongs to either a doctor or a patient, we will eliminate this. It does not hold any syntactic meaning. 
+Both `D: ` and `P: ` mean that each turn belongs to either a doctor or a patient. Because these do not hold any syntactic meaning in a given turn, we will eliminate these characters. 
 
 The following examples uses the package [RegEx](https://www.w3schools.com/python/python_regex.asp) for python. RegEx means "Regular Expressions", a term that you will learn in the future. 
 
