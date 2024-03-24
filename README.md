@@ -40,9 +40,9 @@ After tokenization, you need to convert the tokenized text into token IDs. For t
 
 ![Alt text](images/tokenizer_class.png)
 
-Let's focus on the encoding section `tokenizer.encode(text)`. In this step, the sample text is tokenized into tokens (tokenization) and then transfromed into token IDs. If you carefully see at the image, you will find you need a "vocabulary" to make this last step happen. 
+Let's focus on the encoding section `tokenizer.encode(text)`. In this step, the sample text is tokenized into tokens (tokenization) and then transfromed into token IDs. If you carefully look at the image, you will find you need a "vocabulary" to make this last step happen. 
 
-How do you create a vocabulary? It depends on the training dataset you are using to train your LLM. For instance, imagine your training data all the information available from wikipedia. Then, you will create a python script that does 3 things:
+How do you create a vocabulary? It depends on the training dataset you are using to train your LLM. For instance, imagine your training data is all the information available in wikipedia. Then, you will create a python script that does 3 things:
 1) reads everything from wikipedia
 2) tokenize the input text
 3) saves each token and its corresponding number into a dictionary. (See image below)
