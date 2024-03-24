@@ -66,7 +66,7 @@ You are not allowed to use the following packages:
 - [NLTK](https://www.nltk.org/)
 
 ### Cleaning data
-I would recommend to work with only one file first. And after creating a dictionary for one file, adapt your coding for multiple files. 
+I would highly recommend that you start working with one file. After successfully creating a dictionary for that file adapt your coding for multiple files. 
 
 
 #### Deleting `D:` and `P:`
