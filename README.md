@@ -96,7 +96,7 @@ for turn in lst_turns:
 print(new_lst)
 new_lst = ["OK, and then any cancers in the family?", "No."]
 ```
-*In ReGex, `re.sub()` is used for replacing or substituting. You do not need to know how it works. Just use this coding wherever is needed. *
+*In ReGex, `re.sub()` is used for replacing or substituting. You do not need to know how it works. Just use this coding wherever is needed.*
 
 Output:
 ```
